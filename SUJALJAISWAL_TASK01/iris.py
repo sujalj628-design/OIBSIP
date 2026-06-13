@@ -13,5 +13,27 @@ print("Dataset Shape:", data.shape)
 print("\nSpecies Distribution:\n")
 print(data['Species'].value_counts())
 
+# Data Preparation And Spliting for traniing
+x= data[['SepalLengthCm',
+          'SepalWidthCm',
+          'PetalLengthCm',
+          'PetalWidthCm']]
+
+y= data['Species']
+
+x_train, x_test, y_train, y_test = train_test_split(x,
+                                                    y,
+                                                    test_size=0.2, 
+                                                    random_state=42)
+
+# Modle
+model = RandomForestClassifier(random_state=42)
+
+model.fit(x_train, y_train)
+y_pred = model.predict(x_test)
+
+print("\n MODEL PERFORMANCE \n")
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy Score:", accuracy)
 
 
