@@ -27,7 +27,7 @@ x_train, x_test, y_train, y_test = train_test_split(x,
                                                     random_state=40)
 
 # Modle
-model = RandomForestClassifier(random_state=42)
+model = RandomForestClassifier(random_state=40)
 
 model.fit(x_train, y_train)
 y_pred = model.predict(x_test)
