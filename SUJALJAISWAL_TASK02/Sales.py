@@ -29,3 +29,9 @@ X_train, X_test, y_train, y_test = train_test_split( X,
 model = LinearRegression()
 model.fit(X_train, y_train)
 
+# Model Performance
+y_pred = model.predict(X_test)
+score = r2_score(y_test, y_pred)
+
+print("\nPERFORMANCE OF THE MODLE:")
+print("R2 Score:", round(score, 2))
