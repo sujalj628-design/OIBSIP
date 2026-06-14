@@ -19,7 +19,6 @@ print(data.columns)
 X = data[['TV', 'Radio', 'Newspaper']]
 y = data['Sales']
 
-
 X_train, X_test, y_train, y_test = train_test_split( X, 
                                                      y, 
                                                      test_size=0.2, 
@@ -35,3 +34,13 @@ score = r2_score(y_test, y_pred)
 
 print("\nPERFORMANCE OF THE MODLE:")
 print("R2 Score:", round(score, 2))
+
+# USER PREDICTION 
+print("\nSALES PREDICTION \n")
+
+tv = float(input("ENTER TV ADVERTISING BUDGET: "))
+radio = float(input("ENTER RADIO ADVERTISING BUDGET: "))
+newspaper = float(input("ENTER NEWSPAPER ADVERTISING BUDGET: "))
+
+prediction = model.predict([[tv, radio, newspaper]])
+print("\nSALES PREDICTED IS:", round(prediction[0], 2))
