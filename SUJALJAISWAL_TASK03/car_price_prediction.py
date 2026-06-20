@@ -14,3 +14,8 @@ print("Dataset Shape:", data.shape)
 
 print("\nColumns:")
 print(data.columns)
+
+# CONVERTING TEXT COLUNM INTO NUMBER
+data['Fuel_Type'] = data['Fuel_Type'].map({'Petrol': 0, 'Diesel': 1, 'CNG': 2})
+data['Seller_Type'] = data['Seller_Type'].map({'Dealer': 0, 'Individual': 1})
+data['Transmission'] = data['Transmission'].map({'Manual': 0, 'Automatic': 1})
