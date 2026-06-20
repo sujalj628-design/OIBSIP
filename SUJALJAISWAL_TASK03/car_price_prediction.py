@@ -36,9 +36,23 @@ X_train, X_test, y_train, y_test = train_test_split(X,
 model = LinearRegression()
 model.fit(X_train, y_train)
 
-y_pred = model.predict(X_test)
+print("\nCAR PRICE PREDICTION \n")
 
-score = r2_score(y_test, y_pred)
+present_price = float(input("Enter Present Price (in lakhs): "))
+driven_kms = int(input("Enter Driven Kilometers: "))
+fuel_type = int(input("Enter Fuel Type (Petrol=0, Diesel=1, CNG=2): "))
+selling_type = int(input("Enter Selling Type (Dealer=0, Individual=1): "))
+transmission = int(input("Enter Transmission (Manual=0, Automatic=1): "))
+owner = int(input("Enter Number of Previous Owners: "))
 
-print("\nMODEL PERFORMANCE \n")
-print("R2 Score:", round(score, 2))
+user_data = [[
+    present_price,
+    driven_kms,
+    fuel_type,
+    selling_type,
+    transmission,
+    owner
+]]
+
+prediction = model.predict(user_data)
+print("\nPREDICTED SELLING PRICE:", round(prediction[0], 2), "Lakhs")
