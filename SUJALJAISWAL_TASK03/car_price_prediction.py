@@ -19,3 +19,15 @@ print(data.columns)
 data['Fuel_Type'] = data['Fuel_Type'].map({'Petrol': 0, 'Diesel': 1, 'CNG': 2})
 data['Seller_Type'] = data['Seller_Type'].map({'Dealer': 0, 'Individual': 1})
 data['Transmission'] = data['Transmission'].map({'Manual': 0, 'Automatic': 1})
+
+# FEARTURE SELECTION
+X = data[['Present_Price', 'Driven_kms', 'Fuel_Type',
+          'Seller_Type', 'Transmission', 'Owner', 'Car_Age']]
+
+y = data['Selling_Price']
+
+# SPLIT DATASET
+X_train, X_test, y_train, y_test = train_test_split(X,
+                                                    y,
+                                                    test_size=0.2,
+                                                    random_state=42)
