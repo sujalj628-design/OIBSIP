@@ -5,7 +5,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
 # Loading The Dataset
-data = pd.read_csv(r"C:\Users\sujal\OneDrive\Desktop\my_project\OIBSIP\SUJALJAISWAL_TASK01\Iris.csv")
+data = pd.read_csv("Iris.csv")
+#C:\Users\sujal\OneDrive\csvDesktop\my_project\OIBSIP\SUJALJAISWAL_TASK01\Iris.
 
 print("++++++ IRIS FLOWER CLASSIFICATION ++++++\n")
 
